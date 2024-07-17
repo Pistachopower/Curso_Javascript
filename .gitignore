@@ -1,0 +1,4 @@
+#se coloca los archivos con la extension que se quiere ignorar 
+#colocando la expresion regular * y la extension
+*.bat
+
