@@ -4,72 +4,101 @@ un mes del calendario y presente en pantalla su nombre
 usando una estructura de control adecuada.
 */
 
-var mes = parseInt(prompt("Ingrese el número del mes: "));
-
-while ( mes >= 1 && mes <= 12) {
-    switch (mes) {
-        case 1:
-          // Código a ejecutar si la expresión coincide con valor1
-          alert("Enero");
-          break;
-        case 2:
-          // Código a ejecutar si la expresión coincide con valor2
-          alert("Febrero");
-          break;
-        case 3:
-          // Código a ejecutar si la expresión coincide con valor2
-          alert("Marzo");
-          break;
-        case 4:
-          // Código a ejecutar si la expresión coincide con valor2
-          alert("Abril");
-          break;
-      
-        case 5:
-          // Código a ejecutar si la expresión coincide con valor2
-          alert("Mayo");
-          break;
-      
-        case 6:
-          // Código a ejecutar si la expresión coincide con valor2
-          alert("Junio");
-          break;
-      
-        case 7:
-          // Código a ejecutar si la expresión coincide con valor2
-          alert("Julio");
-          break;
-      
-        case 8:
-          // Código a ejecutar si la expresión coincide con valor2
-          alert("Agosto");
-          break;
-      
-        case 9:
-          // Código a ejecutar si la expresión coincide con valor2
-          alert("Septiembre");
-          break;
-      
-        case 10:
-          // Código a ejecutar si la expresión coincide con valor2
-          alert("Octubre");
-          break;
-      
-        case 11:
-          // Código a ejecutar si la expresión coincide con valor2
-          alert("Noviembre");
-          break;
-      
-        case 12:
-          // Código a ejecutar si la expresión coincide con valor2
-          alert("Diciembre");
-          break;
- 
-      }
-
-        mes = parseInt(prompt("Ingrese el número del mes: "));
+mes = parseInt(prompt('Ingrese el número del mes: '));
 
 
+switch (mes) {
+    case 1:
+        //el numero corresponde al mes de 
+        alert("El numero " + mes + " corresponde al mes de enero");
+
+
+        break;
+
+    case 2:
+        //el numero corresponde al mes de 
+        alert("El numero " + mes + " corresponde al mes de febrero");
+
+
+        break;
+
+    case 3:
+        //el numero corresponde al mes de 
+        alert("El numero " + mes + " corresponde al mes de marzo");
+
+
+        break;
+
+    case 4:
+        //el numero corresponde al mes de 
+        alert("El numero " + mes + " corresponde al mes de abril");
+
+
+        break;
+
+    case 5:
+        //el numero corresponde al mes de 
+        alert("El numero " + mes + " corresponde al mes de mayo");
+
+
+        break;
+
+    case 6:
+        //el numero corresponde al mes de 
+        alert("El numero " + mes + " corresponde al mes de junio");
+
+
+        break;
+
+    case 7:
+        //el numero corresponde al mes de 
+        alert("El numero " + mes + " corresponde al mes de julio");
+
+
+        break;
+
+    case 8:
+        //el numero corresponde al mes de 
+        alert("El numero " + mes + " corresponde al mes de agosto");
+
+
+        break;
+
+
+    case 9:
+        //el numero corresponde al mes de 
+        alert("El numero " + mes + " corresponde al mes de septiembre");
+
+
+        break;
+
+
+    case 10:
+        //el numero corresponde al mes de 
+        alert("El numero " + mes + " corresponde al mes de octubre");
+
+
+        break;
+
+    case 11:
+        //el numero corresponde al mes de 
+        alert("El numero " + mes + " corresponde al mes de noviembre");
+
+
+        break;
+
+
+    case 12:
+        //el numero corresponde al mes de 
+        alert("El numero " + mes + " corresponde al mes de diciembre");
+
+
+        break;
+
+
+    default:
+        alert("La opción no es correcta");
+        break;
 }
 
 

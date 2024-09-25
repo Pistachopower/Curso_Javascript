@@ -1,76 +1,103 @@
 /*
-Realizar un programa que proporcione el cambio de Euros 
-a Dólares, Libras, Yenes,Franco Suizo, Corona Noruega, 
-según opción. El programa debe controlar todas las
-entradas y ofrecer al usuario la posibilidad de repetir 
-o salir.
+Realizar un programa que proporcione el cambio de Euros a Dólares, 
+Libras, Yenes, Franco Suizo, Corona Noruega, según opción. 
+El programa debe controlar todas las entradas y ofrecer al usuario 
+la posibilidad de repetir o salir.
 
-    
-        case 3:
-            alert("yenes");
-          break;
-    
-          case 4:
-            alert("libras");
-          break;
-    
-          case 5:
-            alert("libras");
-          break;
-    
-          case 6:
-            alert("libras");
-          break;
+Euros a Dólares
+     a Libras
+     a  Yenes
+     a Franco Suizo
+     a Corona Noruega
 */
 
-alert(
-  "Introduce 0 para salir, 1 cambio de euros a Dolares" +
-    " 2 euros a libras, 3 euros a yenes, 4 euros a franco, " +
-    " 5 euros a corona noruega"
-);
-var valor = parseInt(prompt("Ingrese la opción: "));
 
-while (!(valor == 0)) {
-  var tasa = 0;
-  var monto = 0;
-  switch (valor) {
-    case 1:
-      monto = parseFloat(prompt("Ingrese el monto: "));
-      tasa = monto * 1.09;
 
-      alert(monto + " equivalen en dolares: " + parseFloat(tasa));
-      break;
+//construimos la iteracion de salida
+//0
+//variable global
+var euros = 0;
 
-    case 2:
-      monto = parseFloat(prompt("Ingrese el monto: "));
-      tasa = monto * 0.84;
+var opcion = parseInt(prompt('Menú: Número negativo para salir, 1- Convertir Euros a Dólares, 2- a Libras, 3- a  Yenes, 4- a Franco Suizo, 5-a Corona Noruega '));
 
-      alert(monto + " equivalen en libras: " + parseFloat(tasa));
-      break;
+while (!(opcion < 0)) {
 
-    case 3:
-      monto = parseFloat(prompt("Ingrese el monto: "));
-      tasa = monto * 167.58;
 
-      alert(monto + " equivalen en yenes: " + parseFloat(tasa));
-      break;
 
-      case 4:
-        monto = parseFloat(prompt("Ingrese el monto: "));
-        tasa = monto * 6.55957;
-  
-        alert(monto + " equivalen en franco suizo: " + parseFloat(tasa));
-        break;
+    //Swich para las opciones de valor
+    switch (opcion) {
+        case parseInt(1):
+            euros = parseFloat(prompt('Ingrese monto del cambio en euros: '));
+
+            //hacemos la conversion: tasa de cambio 1.10
+            var conversion = euros * 1.10;
+
+            //mostramos la conversion
+            alert('El cambio de ' + euros + ' €  a dólares es: ' + conversion);
+
+            break;
+
+        case 2:
+            euros = parseFloat(prompt('Ingrese monto del cambio en euros: '));
+
+            //hacemos la conversion: tasa de cambio 
+            var conversion = euros * 0.84;
+
+            //mostramos la conversion
+            alert('El cambio de ' + euros + ' €  a libras es: ' + conversion);
+
+            break;
+
+        case 3:
+            euros = parseFloat(prompt('Ingrese monto del cambio en euros: '));
+
+            //hacemos la conversion: tasa de cambio 
+            var conversion = euros * 160.93;
+
+            //mostramos la conversion
+            alert('El cambio de ' + euros + ' €  a yenes es: ' + conversion);
+
+            break;
+
+        case 4:
+            euros = parseFloat(prompt('Ingrese monto del cambio en euros: '));
+
+            //hacemos la conversion: tasa de cambio 
+            var conversion = euros * 0.95;
+
+            //mostramos la conversion
+            alert('El cambio de ' + euros + ' €  a Franco Suizo es: ' + conversion);
+
+            break;
+
+
 
         case 5:
-            monto = parseFloat(prompt("Ingrese el monto: "));
-            tasa = monto * 11.92;
-      
-            alert(monto + " equivalen a corona noruega: " + parseFloat(tasa));
-            break;
-  }
+            euros = parseFloat(prompt('Ingrese monto del cambio en euros: '));
 
-  valor = parseInt(prompt("Ingrese el número: "));
+            //hacemos la conversion: tasa de cambio 
+            var conversion = euros * 160.93;
+
+            //mostramos la conversion
+            alert('El cambio de ' + euros + ' €  a corona noruega es: ' + conversion);
+
+            break;
+
+        default:
+            alert("La opción no es correcta");
+            break;
+    }
+
+
+
+
+
+    //vuelve a pedir la opcion
+    opcion = parseInt(prompt('Menú: Número negativo para salir, 1- Convertir Euros a Dólares, 2- a Libras, 3- a  Yenes, 4- a Franco Suizo, 5-a Corona Noruega '));
+
 }
 
 alert("Has salido");
+
+
+
