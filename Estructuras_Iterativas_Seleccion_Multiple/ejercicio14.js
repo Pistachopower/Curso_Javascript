@@ -6,7 +6,6 @@ termina cuando se lee un * como sexo. Se validarán todas las entradas, el sexo 
 H o M y el sueldo entre los 1000 y 2000 euros independientemente de que el
 trabajador sea hombre o mujer.
 
-*/
 
 var sexo = "";
 var sueldo = 0;
@@ -63,3 +62,52 @@ var salida = "";
 salida = mediaFinal.toString();
 
 alert("El cálculo total es " + salida);
+
+
+*/
+var totalSueldos = 0;
+var totalPersonas= 0;
+
+//pedimos los datos 
+sexo = prompt("Ingrese el sexo: ");
+
+if (sexo === "h" || sexo === "H" || sexo === "m" || sexo === "M") {
+
+    while (!(sexo == "*")) {
+
+        sueldo = parseInt(prompt('Ingrese el sueldo: '));
+        //comprobamos el rango del sueldo
+        if (sueldo >= 1000 && sueldo <= 2000) {
+            //sumamos todos los sueldos
+            totalSueldos = totalSueldos + sueldo;
+            totalPersonas++;
+
+        } else {
+            alert("La opción no es correcta. Inténtelo de nuevo");
+        }
+
+
+        //controlamos que el sexo sea el correcto
+        do {
+            sexo = prompt("Ingrese el sexo: ");
+        
+        } while (sexo != "h" && sexo != "H" && sexo != "m" && sexo != "M" && sexo != "*");
+
+
+
+
+
+
+    }
+
+
+
+} else {
+    alert("Los datos no son correcto");
+
+}
+
+
+alert("El total de sueldos de H y M es: " + (totalSueldos / totalPersonas));
+
+

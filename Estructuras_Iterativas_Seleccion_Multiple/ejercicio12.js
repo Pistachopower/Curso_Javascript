@@ -9,8 +9,6 @@ APROBADO mayor que 5 y menor que 6
 BIEN entre 6 y 7
 NOTABLE entre 7 y 8
 SOBRESALIENTE entre 9 y 10
-*/
-
 
 do {
     //se controla que el valor esté entre 0 y 10
@@ -29,6 +27,38 @@ do {
   } else {
     alert("SOBRESALIENTE");
   }
-  
-  
+*/
 
+
+
+  
+  
+nota = parseInt(prompt('Introduce la nota: '));
+
+//controla que las notas estén entre 0 y 10
+if (nota >= 0 && nota <= 10) {
+    //SUSPENSO si es menor que 5
+    if (nota < 5) {
+        alert("Suspenso")
+
+        //APROBADO mayor que 5 y menor que 6
+    } else if (nota > 4 && nota === 5) {
+        alert("Aprobado")
+
+        //BIEN entre 6 y 7 
+    } else if (nota > 5 && nota < 7) {
+        alert("Bien")
+
+        //NOTABLE entre 7 y 8
+    } else if (nota > 6 && nota <= 8) {
+        alert("Notable")
+    }
+    //SOBRESALIENTE entre 9 y 10
+    else {
+        // Código a ejecutar si ambas condiciones son falsas
+        alert("SOBRESALIENTE")
+    }
+} else {
+
+    alert("La nota no es válida")
+}
