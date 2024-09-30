@@ -14,7 +14,7 @@ var inicioP= "";
 var finalP= "";
 
 
-palabra= prompt("Ingrese una  cadena: ");
+var palabra= prompt("Ingrese una  cadena: ");
 
 //si exite (que) muestra la palabra dentro del parentesis
 if (palabra.indexOf("(") >= 0 && palabra.indexOf(")") >= 0) {

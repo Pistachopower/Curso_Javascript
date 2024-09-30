@@ -9,7 +9,7 @@ var contadorNombre= 0;
 var contadorC= 0;
 var contadorÑ= 0;
 
-palabra= prompt("Ingrese un nombre: ");
+var palabra= prompt("Ingrese un nombre: ");
 
 
 while (!(palabra == "ULTIMO")) {

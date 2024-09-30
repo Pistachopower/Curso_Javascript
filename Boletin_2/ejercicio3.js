@@ -10,7 +10,7 @@ Leer un texto de la entrada estándar y contar cuántas palabras tiene,
 var totalPalabras = 0;
 var totalA = 0;
 
-var texto = prompt('Ingrese el texto: ');
+var texto = prompt("Ingrese el texto: ");
 
 //convertimos en un array texto para contar las palabras
 var textoArrays = texto.split(" ");

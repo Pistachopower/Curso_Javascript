@@ -18,7 +18,7 @@ alert(palabraAlreves);
 
 var palabraAlreves="";
 
-palabra= prompt("Ingrese una  cadena: ");
+var palabra= prompt("Ingrese una  cadena: ");
 
 //recorremos la cadena 
 for (let i = 0; i < palabra.length; i++) {
