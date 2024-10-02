@@ -13,7 +13,7 @@ const expresionRegular = /^[a-z0-9]+@[a-z0-9]+\.(com|es|net|org)$/;
 
 var direccion = prompt("Ingrese su correo:");
 
-while (direccion.indexOf('@') === -1 || direccion.indexOf('.') === -1 || !(direccion.endsWith(".com") || direccion.endsWith(".es") || direccion.endsWith(".net") || direccion.endsWith(".org"))) {
+while (!(expresionRegular.test(direccion))) {
     alert("Correo inválido. Debe contener '@', un dominio y una extensión válida (.com, .es, .net, .org).");
     direccion = prompt("Ingrese su correo:");
 }
