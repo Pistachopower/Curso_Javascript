@@ -1,0 +1,83 @@
+Toda expresion regular siempre comienza con: 
+/expresionRegular/flag
+
+Parametros
+
+Signo + Quiere decir que debe aparecer al menos una vez.
+
+(?= Patron de aproximación, que permite comprobar si existe alguno de los caracteres o la expresión regular existe en nuestra cadena.
+
+.* Le puede preceder otro caracter
+
+^ :indica el inicio de la cadena.
+
+$ indica el final de la cadena.
+
+
+Formulas expresion regular
+Validar que un texto se encuentre en minúscula:
+/[a-z]/
+
+Validar que un texto se encuentre en minúscula y mayúsculas:
+/[a-zA-Z]/   También es válido así: /[\w-.]/
+
+
+Validar que un texto se encuentre en minúscula, mayúsculas y rango de 0 al 9:
+/[a-zA-Z0-9]/
+
+Validar que un texto comience y termine y se encuentre en minúscula, mayúsculas y rango de 0 al 9:
+/^[a-zA-Z0-9]$/
+
+Validar que un texto se encuentre en minúscula, mayúsculas, rango de 0 al 9, con barra, guión bajo,puntos:
+/[a-zA-Z0-9-_.]/
+
+Validar que un texto se encuentre en minúscula, mayúsculas, rango de 0 al 9, con barra, guión bajo,puntos. Más un @:
+/[a-zA-Z0-9-_.]+@/
+
+Expresion regular para validar que una letra comience en mayúscula
+/^[A-Z][a-z]{2,11}$/
+
+Ejemplo:
+Nelson
+
+Expresion regular para validar que la cadena contenga espacios
+/^[a-z\s]+$/
+
+Ejemplo:
+nelson galicia buenos dias adios
+
+
+Expresion regular para validar un correo electronico
+/^[a-z0-9._-]+@[a-z0-9.-]+\.[a-z]{2,6}$/
+
+Ejemplo
+pablopedro@gmail.com.es
+
+Expresion regular para validar una contraseña
+Debe tener al menos 1 minúscula, 1 mayuscula, 1 letra, un simbolo y estar entre 8 y 12
+
+/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,12}$/
+
+Ejemplo: 
+aL1@DJSaksjd
+
+
+Expresion regular que valida un número de telefono internacional
+Explicación
+^\+: El número debe comenzar con un signo “+”.
+\d{1,3}: Debe haber de uno a tres dígitos para el código de país.
+\s?: Un espacio opcional entre el código de país y el número de teléfono.
+\d{1,14}$: De uno a catorce dígitos para el número de teléfono
+
+/^\+\d{1,3}\s?\d{1,14}$/
+
+Ejemplo: 
++346020291
+
+
+
+
+
+
+
+
