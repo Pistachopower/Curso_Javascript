@@ -49,6 +49,7 @@ nelson galicia buenos dias adios
 
 Expresion regular para validar un correo electronico
 /^[a-z0-9._-]+@[a-z0-9.-]+\.[a-z]{2,6}$/
+Otro: [a-z\.0-9]+@
 
 Ejemplo
 pablopedro@gmail.com.es
