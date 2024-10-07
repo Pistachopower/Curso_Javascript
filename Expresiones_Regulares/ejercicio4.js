@@ -5,8 +5,6 @@ paréntesis. Ejemplo: Si escribimos el texto “Hola (que) tal” se
 mostrará “que”. Si no existe el signo “(“ mostrará una cadena 
 vacía y si existe el signo  “(“pero no el signo “)” mostrará desde 
 el primer paréntesis hasta el final.
-
-
 */
 
 //inicializamos las cadenas para seleccionar la palabra por indice con slice
