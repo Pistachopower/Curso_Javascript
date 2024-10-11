@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios BOM</title>
+    <!--defer: atributo del elemento script que espera a que 
+    el html se cargue en segundo plano (de forma asincrona) y
+    que lo ejecute solo despues de cargar el html-->
+    <script src="ejercicio3.js"></script>
+</head>
+
+<body>
+    <h1>Bienvenido</h1>
+    <!--Ejemplo usando eventos
+    El # en el atributo href="#" es un marcador de posición que 
+    permite que el enlace sea clicable sin redirigir a ninguna 
+    otra página. Básicamente, dice al navegador que el enlace no 
+    debe navegar a otro URL, sino ejecutar algún JavaScript 
+    (en este caso, onclick="abrirVentana()").
+    
+    
+    -->
+    <a href="#" onclick="abrirVentana()"><p>abrir una nueva ventana</p></a>
+    <a href="#" onclick="cerrarVentana()"><p>Cerrar ventana</p></a>
+</body>
+
+</html>
