@@ -6,9 +6,10 @@ argumentos de entrada es desconocido.
 //ambas usan Rest (captura un numero indefinido de argumentos 
 // pasandolos a un array)
 
+/*
 function sumaNumClasica(...numeros) {
     //contador
-    var suma=0;
+    var suma = 0;
 
     for (let i = 0; i < numeros.length; i++) {
         suma += numeros[i];
@@ -17,17 +18,30 @@ function sumaNumClasica(...numeros) {
     return suma;
 }
 
-//alert(sumaNumClasica(2,3));
 
 
-function sumaNum(...numeros) {//captura los numeros y convierte los numeros en array
 
-    /*
-    => significa que esa una funcion flecha
-    */
-    return numeros.reduce((contador, numActualDeArray) => contador + 
-                            numActualDeArray, 1); //0: valor inicial de contador
+*/
+
+
+//funcion flecha
+let sumaNumClasica = (...parametro) => {
+    //contador
+    var suma = 0;
+
+    for (let i = 0; i < parametro.length; i++) {
+        suma += parametro[i];
+    }
+
+    return suma;
+
 }
 
-alert(sumaNum(3,4,8));
+
+
+
+
+
+
+
 
