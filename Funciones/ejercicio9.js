@@ -86,7 +86,7 @@ function uneArrays(...numero) {
   //creamos una variable que almacena array resultante
   var arrayResultante;
 
-  for (let i = 0; i < paragram.length; i++) {
+  for (let i = 0; i < par.length; i++) {
     suma += parametro[i];
   }
 
