@@ -1,16 +1,3 @@
-/*
-Refactoriza el siguiente código usando funciones flecha.
-Asegúrate de que la función se llama tripleAndFilter.
-    function tripleAndFilter(arr){
-            return arr.map(function(value){
-                    return value * 3;
-                    }).filter(function(value){
-                        return value % 5 === 0;
-                })
-    }
-
-*/
-
 function tripleAndFilter(arr) {
     /*    
         //metodo map: crea y devuelve un array con un resultado, parametro(array)
@@ -52,45 +39,49 @@ function tripleAndFilter(arr) {
 //alert(tripleAndFilter([5,6, 4]));
 
 //refactorizacion
-let tripleAndFilterF = (arr) => {
+const tripleAndFilter = (arr) => 
+    arr.map(value => value * 3)
+       .filter(value => value % 5 === 0);
+/*
+Explicación Paso a Paso
 
-    //metodo que devuelve un array con los elementos multiplicados
-    var arrayMultiplicado = arr.map(
-        function (elementoArray) {
-            return elementoArray * 3;});
+    Identificación de Funciones:
+    La función original tiene dos partes: map y filter.
+    map se utiliza para transformar cada elemento del arreglo multiplicándolo por 3.
+    filter se usa para seleccionar solo aquellos elementos que son divisibles por 5.
+
+    Uso de Funciones de Flecha:
+    En lugar de usar la sintaxis tradicional de function, podemos usar funciones de flecha, que son 
+    más cortas y se ven más limpias.
+    Por ejemplo, function(value) { return value * 3; } se convierte en value => value * 3.
+
+    Simplificación de Retornos:
+    ººAl usar funciones de flecha, si solo hay una línea de código, podemos omitir las llaves {} y 
+    la palabra return.
+    ººAsí, la línea return arr.map(function(value) { ... }) se convierte simplemente en arr.map(...).
+
+    Consolidación:
+        El código se vuelve más fácil de leer y entender al usar una única expresión para devolver 
+        el resultado final.
+
+        Proceso Interno
+
+        Aplicar map:
+            Multiplicamos cada número por 3:
+            [3, 6, 9, 12, 15, 18, 21, 24, 27, 30]
+
+        Aplicar filter:
+            Filtramos los números que son divisibles por 5:
+            Solo queda: [15, 30]
+
+    Resultado Final
+
+    El resultado impreso en la consola será: [15, 30]
 
 
-    //metodo de devuelve los elementos en array que son divisibles entre 5
-    return arrayMultiplicado.filter(
-        //obtiene el eleme
-        function (elementoArrayMultiplicado) {
-        return elementoArrayMultiplicado % 5 === 0;
-    })
-    
+*/
 
-}
 
 //alert(tripleAndFilterF([5, 5, 4])); 
 
-/*
-Asegúrate de que la función se llama doubleOddNumbers.
-    function doubleOddNumbers(arr){
-        return arr.filter(function(val){
-            return val % 2 !== 0;
-        }).map(function(val){
-            return val *2;
-        })
-    }
 
-
-Asegúrate de que la función se llama bar
-function bar(){ 
-let txt = ''; 
-for(let i in arguments){ 
-txt += arguments[i];
-} 
-return txt;
-}
-        d.Observando los ejemplos anteriores, repite el
-         ejercicio 9.d, utilizando la programación funcional
-*/
