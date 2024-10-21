@@ -31,8 +31,14 @@ Explicación de la Refactorización
 
 */
 
-const sumaArgParesF = (...args) => 
-    args.reduce((suma, num) => suma + (num % 2 === 0 ? num : 0), 0);
+//operador Rest 
+
+/*
+El metodo reduce tiene adentro funciones flechas (en este ejemplo tiene dos)
+El reduce funciona parecido como un for que recorre los indices del array
+Aunque faltan las {} y los return 
+*/
+const sumaArgParesF = (...valores) => valores.reduce((sumaPares, indiceActual) => sumaPares + (indiceActual % 2 === 0 ? indiceActual : 0), 0); //0 es de donde debe comenzar
 
 alert(sumaArgParesF(1, 2, 6)); // Muestra: 8
 
