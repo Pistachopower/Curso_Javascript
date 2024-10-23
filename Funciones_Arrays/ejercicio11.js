@@ -30,7 +30,6 @@ const resultado = extraerNumeros(cadena);
 // Imprimimos los números encontrados y su suma
 console.log("Números encontrados:", resultado.numeros);
 console.log("Suma de los números:", resultado.suma);
-*/
 
 //otra forma
 // Función para extraer números de una cadena usando funciones flechas
@@ -53,4 +52,41 @@ const resultado = extraerNumeros(cadena);
 // Imprimimos los números encontrados y su suma
 console.log("Números encontrados:", resultado.numeros);
 console.log("Suma de los números:", resultado.suma);
+
+let suma = numeros.reduce((acumulador, valorActual) => acumulador + valorActual, 0);
+
+*/
+
+let extraerNumero = (cadena) => {
+    //creamos la expresion regular 
+    var regex= /[0-9]/g ;
+
+    //verificamos si la cadena tiene numeros
+    if (regex.test(cadena)) {
+
+        //variable que almacena los números en array
+        var numArray= new Array(0);
+
+        //pasamos los numeros a un array
+        numArray= cadena.match(regex);
+        alert("Los números son " + numArray);
+
+        //hasta este momento el numArray es de tipo string, por lo tanto debemos pasar ese array de string a numeros
+
+
+        //creamos un array que recibe el otro array de cadenas para pasarlo a numeros y luego sumarlo
+        var sumaNumeros= numArray.map(Number).reduce((acumulador, valorActual) => acumulador + valorActual, 0); 
+
+        alert("La suma es " + sumaNumeros);
+
+    } else {
+        alert("No hay letras");
+        
+    }
+
+  };
+
+alert(extraerNumero("hola584"));
+
+
 
