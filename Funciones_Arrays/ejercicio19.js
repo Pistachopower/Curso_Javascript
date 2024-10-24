@@ -1,10 +1,4 @@
 /*
-Hacer un programa en el que el usuario que introduzca, nombre, apellidos, DNI y 
-fecha de nacimiento separado por comas. Esta entrada de datos se repetirá hasta 
-que el usuario introduzca la cadena vacía. El programa debe guardar los datos en 
-un array bidimensional.
-*/
-
 // Función para obtener los datos del usuario
 const obtenerDatosUsuario = () => {
     var entrada = prompt("Introduce tu nombre, apellidos, DNI y fecha de nacimiento (separados por comas). Deja vacío para terminar:");
@@ -39,6 +33,34 @@ const recopilarDatos = () => {
 
 // Llamar a la función principal
 recopilarDatos();
+
+
+Hacer un programa en el que el usuario que introduzca, nombre, apellidos, DNI y 
+fecha de nacimiento separado por comas. Esta entrada de datos se repetirá hasta 
+que el usuario introduzca la cadena vacía. El programa debe guardar los datos en 
+un array bidimensional.
+
+nelson,diaz,y7777777x,20/04/93
+pedro,perez,y8888x,10/03/80
+*/
+
+//creamos un array que se ira llenando los datos
+var arrayGeneral = new Array();
+
+var datosUsuario = prompt("Ingrese sus datos: ");
+
+while (!(datosUsuario === "")) {
+
+    //convertimos el dato del usuario a un array separados por comas y palabras
+    var datosInternos = datosUsuario.split(",");
+
+    // Añadimos el array resultante a nuestro array general
+    arrayGeneral.push(datosInternos);
+
+    datosUsuario = prompt("Ingrese sus datos: ");
+}
+
+
 
 
 
