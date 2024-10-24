@@ -7,30 +7,39 @@ un array bidimensional.
 
 // Función para obtener los datos del usuario
 const obtenerDatosUsuario = () => {
-    const entrada = prompt("Introduce tu nombre, apellidos, DNI y fecha de nacimiento (separados por comas). Deja vacío para terminar:");
-    return entrada ? entrada.split(',').map(dato => dato.trim()) : null;
+    var entrada = prompt("Introduce tu nombre, apellidos, DNI y fecha de nacimiento (separados por comas). Deja vacío para terminar:");
+    if (entrada && entrada.trim()) {
+        return entrada.split(',').map(dato => dato.trim());
+    }
+    return null;
 };
 
 // Función principal para recopilar y mostrar los datos
 const recopilarDatos = () => {
-    const datosUsuarios = [];
-    let datos;
+    var datosUsuarios = [];
+    var datos;
 
     // Utilizamos un do...while para seguir pidiendo datos hasta que se introduzca una cadena vacía
     do {
         datos = obtenerDatosUsuario();
-        if (datos) {
+        if (datos && datos.length > 0) {
             datosUsuarios.push(datos);
         }
-    } while (datos !== null); // Continuar mientras no sea nulo
+    } while (datos !== null && datos.length > 0);
 
     // Imprimir los datos ingresados
-    console.log("Datos de los usuarios ingresados:");
+    alert("Datos de los usuarios ingresados:");
+
+    
     datosUsuarios.forEach((usuario, index) => {
-        console.log(`Usuario ${index + 1}: Nombre: ${usuario[0]}, Apellidos: ${usuario[1]}, DNI: ${usuario[2]}, Fecha de Nacimiento: ${usuario[3]}`);
+        alert(`Usuario ${index + 1}: Nombre: ${usuario[0]}, Apellidos: ${usuario[1]}, DNI: ${usuario[2]}, Fecha de Nacimiento: ${usuario[3]}`)
+        console.log();
     });
 };
 
 // Llamar a la función principal
 recopilarDatos();
+
+
+
 

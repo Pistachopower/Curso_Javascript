@@ -1,5 +1,12 @@
-  // Función para obtener los datos del usuario
-  const obtenerDatosUsuario = () => {
+/*
+Implementar funciones para el ejercicio anterior para imprimir los datos y para buscar una persona 
+por apellidos, por DNI o por edad. ¿cómo podríamos optimizar la búsqueda? 
+*/
+
+
+
+// Función para obtener los datos del usuario
+const obtenerDatosUsuario = () => {
     const entrada = prompt("Introduce tu nombre, apellidos, DNI y fecha de nacimiento (separados por comas). Deja vacío para terminar:");
     return entrada ? entrada.split(',').map(dato => dato.trim()) : null;
 };
