@@ -1,11 +1,5 @@
 /*
-Implementar funciones para el ejercicio anterior para imprimir los datos y para buscar una persona 
-por apellidos, por DNI o por edad. ¿cómo podríamos optimizar la búsqueda? 
-*/
-
-
-
-// Función para obtener los datos del usuario
+ // Función para obtener los datos del usuario
 const obtenerDatosUsuario = () => {
     const entrada = prompt("Introduce tu nombre, apellidos, DNI y fecha de nacimiento (separados por comas). Deja vacío para terminar:");
     return entrada ? entrada.split(',').map(dato => dato.trim()) : null;
@@ -83,3 +77,81 @@ const recopilarDatos = () => {
 
 // Llamar a la función principal
 recopilarDatos();
+
+Implementar funciones para el ejercicio anterior para imprimir los 
+datos y para buscar una persona por apellidos, por DNI o por edad. 
+¿cómo podríamos optimizar la búsqueda?
+
+nelson,galicia,y6069381v,20/08/93
+juan,mario,y587495v,02/05/93
+*/
+
+//convertimos el programa a una funcion
+var pedirRellenarUsuarios = function (datosUsuario) {
+    //creamos un array que se ira llenando los datos
+    var arrayGeneral = new Array();
+
+    
+    while (!(datosUsuario === "")) {
+
+        //convertimos el dato del usuario a un array separados por comas y palabras
+        var datosInternos = datosUsuario.split(",");
+
+        // Añadimos el array resultante a nuestro array general
+        arrayGeneral.push(datosInternos);
+
+        datosUsuario = prompt("Ingrese sus datos: ");
+    }
+    return arrayGeneral;
+};
+
+//pedimos la informacion al usuario
+var datosUsuario = prompt("Ingrese sus datos: ");
+
+
+//llamamos a la funcion y pasamos por parametro los datos
+//recibimos el array con los datos
+var arrayGeneral= pedirRellenarUsuarios(datosUsuario);
+
+//creamos una funcion que imprimira todos los datos
+var imprimeTodosDatos = function(arrayGeneral) {
+     //tomamos el array que fue rellendo y lo mostramos con un for each
+     arrayGeneral.forEach(function(elemento, indice) {
+        alert("Elemento: " +  (indice + 1));
+        alert(elemento);
+        
+    });
+    
+};
+
+//llamamos a la funcion
+imprimeTodosDatos(arrayGeneral);
+
+
+//buscar una persona por apellidos
+const buscarPersonasApellido = function(arrayGeneral,palabraBuscar) {
+	
+    //obtenemos la longitud del array
+    var longitudArray= arrayGeneral.length;
+
+    //recorremos el array 
+    for (let i = 0; i < arrayGeneral.length; i++) {    
+        for (let j = 0; j < arrayGeneral[i].length; j++) {
+            //guardamos el elemento del array que se usa para comparar
+            let texto= arrayGeneral[i][j];
+
+            //si devuelve un resultado positivo
+            if ((texto.indexOf(palabraBuscar)) >= 0 ) {
+                //mostramos el indice donde se encuentra
+                alert(palabraBuscar  + " se encuentra en el indice" + [i][j]);
+                
+            }
+
+
+        }
+
+};
+
+}
+
+buscarPersonasApellido(arrayGeneral,"galicia");
