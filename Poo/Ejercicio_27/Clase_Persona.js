@@ -1,8 +1,10 @@
+
 /*
-Implementar el ejercicio 20 y 21(sólo imprimir los datos), usando objetos. (P.e. clase Persona) 
+Implementar el ejercicio 20 y 21(sólo imprimir los datos), 
+usando objetos.
+ (P.e. clase Persona) 
 
 */
-
 
 class ClasePersona {
     constructor(nombre, apellido, dni, anio) {
@@ -23,7 +25,7 @@ class ClasePersona {
     };
 };
 
-
+//instanciar a la clase 
 persona= new ClasePersona("nelson", "perez", "y54456", "1995");
-
 persona.mostrarAtributosObjetos();
+
