@@ -16,6 +16,9 @@ class ClasePersona {
     };
 
 
+    //metodo para guardar objetos de alumnos
+
+
 
     mostrarAtributosObjetos() {
         alert("Persona= nombre:" + this.nombre + "\n" + 
@@ -23,9 +26,32 @@ class ClasePersona {
             + "\n" + " fecha nacimiento: " + this.anio 
         );
     };
+
+
+
+    //metodo para mostrar los datos de un apellido
+
+    //crear un metodo para buscar un usuario por apellidos
+
+
+
+    //metodo para buscar un usuario por DNI
+
+
+    //Función para buscar por edad
+    
+    //Funciones usuario mayores de edad
+
+    //Funciones usuario menores de edad
+
+
 };
 
 //instanciar a la clase 
-persona= new ClasePersona("nelson", "perez", "y54456", "1995");
-persona.mostrarAtributosObjetos();
+alumno1= new ClasePersona("nelson", "perez", "y54456", "1995");
+alumno2= new ClasePersona("maria", "galicia", "y6058", "1999");
 
+
+
+alumno1.mostrarAtributosObjetos();
+alumno2.mostrarAtributosObjetos();
