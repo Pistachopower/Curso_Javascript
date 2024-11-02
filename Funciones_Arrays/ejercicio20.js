@@ -84,7 +84,9 @@ datos y para buscar una persona por apellidos, por DNI o por edad.
 
 nelson,galicia,y6069381v,20/08/93
 juan,mario,y587495v,02/05/93
-*/
+
+//pedimos la informacion al usuario
+var datosUsuario = prompt("Ingrese sus datos: ");
 
 //convertimos el programa a una funcion
 var pedirRellenarUsuarios = function (datosUsuario) {
@@ -105,9 +107,6 @@ var pedirRellenarUsuarios = function (datosUsuario) {
     return arrayGeneral;
 };
 
-//pedimos la informacion al usuario
-var datosUsuario = prompt("Ingrese sus datos: ");
-
 
 //llamamos a la funcion y pasamos por parametro los datos
 //recibimos el array con los datos
@@ -127,31 +126,36 @@ var imprimeTodosDatos = function(arrayGeneral) {
 //llamamos a la funcion
 imprimeTodosDatos(arrayGeneral);
 
+nelson,galicia,y6069381v,20/08/93
+juan,mario,y587495v,02/05/93
+
+*/
+
+
+
+
 
 //buscar una persona por apellidos
-const buscarPersonasApellido = function(arrayGeneral,palabraBuscar) {
+const buscarApellido = function(arrayGeneral, apellidoBuscar) {
+
+    //creamos un nuevo array que guardara el apellido
+    /*
+    filter devuelve un nuevo array si include devuelve true
+    
+    */
+    return arrayGeneral.filter(elementoArray => elementoArray.includes(apellidoBuscar));
 	
-    //obtenemos la longitud del array
-    var longitudArray= arrayGeneral.length;
-
-    //recorremos el array 
-    for (let i = 0; i < arrayGeneral.length; i++) {    
-        for (let j = 0; j < arrayGeneral[i].length; j++) {
-            //guardamos el elemento del array que se usa para comparar
-            let texto= arrayGeneral[i][j];
-
-            //si devuelve un resultado positivo
-            if ((texto.indexOf(palabraBuscar)) >= 0 ) {
-                //mostramos el indice donde se encuentra
-                alert(palabraBuscar  + " se encuentra en el indice" + [i][j]);
-                
-            }
-
-
-        }
-
 };
 
-}
+//array de prueba
+var arrayGeneral = [
+    ['nelson', 'galicia', 'y6069381v', '20/08/93'],
+    ['juan', 'perez', 'y587495v', '02/05/93']
+   
+  ];
 
-buscarPersonasApellido(arrayGeneral,"galicia");
+  
+//llamamos a la funcion
+alert(buscarApellido(arrayGeneral, 'galicia'));
+
+
