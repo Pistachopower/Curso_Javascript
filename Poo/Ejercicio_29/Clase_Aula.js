@@ -1,47 +1,41 @@
-// Clase que representa un aula
 class Aula {
-    // Constructor de la clase Aula
     constructor() {
-        this.alumnos = []; // Inicializa un array vacío para almacenar alumnos
+        this.alumnos = new Map(); // Usar Map para almacenar alumnos por su DNI
     }
 
-    // Método para agregar un nuevo alumno al aula
     agregarAlumno(alumno) {
-        this.alumnos.push(alumno); // Agrega el alumno al array
+        this.alumnos.set(alumno.dni, alumno); // Agregar el alumno al Map usando su DNI como clave
     }
 
-    // Método para buscar un alumno por su DNI
     buscarAlumnoPorDNI(dni) {
-        // Busca y devuelve el alumno que coincida con el DNI
-        return this.alumnos.find(alumno => alumno.dni === dni);
+        //this.imprimirAlumnos(this.alumnos.get(dni)); // Obtener el alumno por su DNI
+        return this.alumnos.get(dni);
     }
 
-    // Método para ordenar las notas de un alumno en particular
-    ordenarNotasAlumno(dni) {
-        const alumno = this.buscarAlumnoPorDNI(dni); // Busca el alumno por DNI
+
+    ordenarNotasAlumno(dni) { 
+        const alumno = this.buscarAlumnoPorDNI(dni);
         if (alumno) {
-            // Si se encuentra el alumno, ordena sus notas de menor a mayor
-            return alumno.notas.sort((a, b) => a - b);
+            // Ordenar las notas del alumno y actualizar el Map
+            let notasOrdenadas = new Map([...alumno.notas.entries()].sort((a, b) => a[1] - b[1]));
+            alumno.notas = notasOrdenadas;
         }
-        return null; // Devuelve null si no se encuentra el alumno
     }
 
-    // Método para ordenar el array de alumnos por apellido
-    ordenarAlumnosPorApellido() {
-        return this.alumnos.sort((a, b) => {
-            // Separa el apellido del nombre
-            const apellidoA = a.nombre.split(" ").pop();
-            const apellidoB = b.nombre.split(" ").pop();
-            // Compara los apellidos
-            return apellidoA.localeCompare(apellidoB);
-        });
-    }
 
-    // Método para imprimir los alumnos del aula
+    ordenarAlumnosPorApellido() { 
+        const alumnosOrdenados = [...this.alumnos.values()].sort((a, b) => { 
+            const apellidoA = a.nombre.split(" ").pop(); 
+            const apellidoB = b.nombre.split(" ").pop(); 
+            return apellidoA.localeCompare(apellidoB); 
+        }); 
+        this.alumnos = new Map(alumnosOrdenados.map(alumno => [alumno.dni, alumno])); }
+
+
+
     imprimirAlumnos() {
         this.alumnos.forEach(alumno => {
-            // Muestra un alert con el nombre y DNI de cada alumno
-            alert("Alumno= \n nombre:" + alumno.nombre + "\n" + "dni: " + alumno.dni);
+            alumno.mostrarAtributosAlumno();
         });
     }
 }
@@ -50,31 +44,14 @@ class Aula {
 const aula = new Aula();
 
 // Agregar alumnos al aula
-aula.agregarAlumno(new Alumno("Jorge Pérez", "c5558", ["Sistemas", "Programación", "FOL"], 3.5, 6.5, 7.1));
-aula.agregarAlumno(new Alumno("María López", "c1234", ["Sistemas", "Programación", "FOL"], 8.0, 9.0, 7.5));
-aula.agregarAlumno(new Alumno("Ana Gómez", "c6789", ["Sistemas", "Programación", "FOL"], 6.5, 5.0, 8.0));
-
-// Ejemplo de uso: buscar un alumno por DNI
-/*
-const alumnoBuscado = aula.buscarAlumnoPorDNI("c5558");
-if (alumnoBuscado) {
-    alert("Alumno encontrado: " +  alumnoBuscado.nombre); // Muestra el nombre del alumno encontrado
-} else {
-    alert("Alumno no encontrado."); // Mensaje si no se encuentra el alumno
-}
-
-// Ejemplo de uso: ordenar las notas de un alumno
-const notasOrdenadas = aula.ordenarNotasAlumno("c5558");
-if (notasOrdenadas) {
-    alert("Notas ordenadas: " + notasOrdenadas); // Muestra las notas ordenadas
-}
-
-// Ejemplo de uso: ordenar alumnos por apellido
-const alumnosOrdenados = aula.ordenarAlumnosPorApellido();
-alert("Alumnos ordenados por apellido:\n" + alumnosOrdenados.map(a => a.nombre).join(", ")); // Muestra los nombres ordenados
+aula.agregarAlumno(new Alumno("Jorge Pérez", "c5558", ["Sistemas", "Programación", "FOL"], [["Sistemas", 3.5], ["Programación", 6.5], ["FOL", 7.1]]));
+aula.agregarAlumno(new Alumno("María López", "a1234", ["Sistemas", "Programación", "FOL"], [["Sistemas", 8.0], ["Programación", 9.0], ["FOL", 7.5]]));
+aula.agregarAlumno(new Alumno("Ana Gómez", "c6789", ["Sistemas", "Programación", "FOL"], [["Sistemas", 6.5], ["Programación", 5.0], ["FOL", 8.0]]));
 
 // Imprimir todos los alumnos en el aula
-aula.imprimirAlumnos(); // Llama al método para mostrar todos los alumnos
-*/
+//aula.imprimirAlumnos();
 
-aula.imprimirAlumnos()
+aula.ordenarNotasAlumno();
+
+aula.imprimirAlumnos();
+

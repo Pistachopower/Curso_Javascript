@@ -1,69 +1,56 @@
-
-//Definición de la clase Alumno que hereda de Persona 
+// Definición de la clase Alumno que hereda de Persona 
 class Alumno extends Clase_Persona {
-    constructor(nombre, dni, curso, ...notas) { //usamos spread para el curso y notas
+    constructor(nombre, dni, curso, notas) {
         // Llamar al constructor de la clase padre (Persona) 
         super(nombre, dni);
-        this.curso = curso; //se recibe un array de notas
-        this.notas = notas; //almacena las notas en un array
+        this.curso = new Set(curso); // Usar Set para asegurar asignaturas únicas
+        this.notas = new Map(notas); // Usar Map para asignaturas y notas
     }
 
     mostrarAtributosAlumno() {
-        alert("Alumno= \n nombre:" + this.nombre + "\n" + "dni: " + this.dni
-            + "\n"  + this.curso + "\n"  + this.notas
-        );
-    };
+        let asignaturas = Array.from(this.curso).join(', ');
+        let notas = Array.from(this.notas.entries()).map(([asig, nota]) => `${asig}: ${nota}`).join(', ');
+        alert(`Alumno= \n nombre: ${this.nombre} \n dni: ${this.dni} \n Curso: ${asignaturas} \n Notas: ${notas}`);
+    }
 
-    // devuelva nota media
     notaMediaAlumno() {
-        //variable que indica el indice donde tiene que comenzar a suma
-        var valorInicial= 0;
-
-        //sumamoos las notas
-        var sumaNota= this.notas.reduce(
-            (acumulador, valorActual) => acumulador + valorActual, valorInicial
-        );
-
-        //calculamos la media
-        var notaMedia=  sumaNota / this.notas.length;
-        return notaMedia;
-    };
-
-    //obtener la mejor nota [arrays]
-    mejorNota(){
-        var notaMax= Math.max(...this.notas)
-        return notaMax;
+        let sumaNota = 0;
+        this.notas.forEach(nota => sumaNota += nota);
+        return sumaNota / this.notas.size;
     }
 
-
-    //nombre del modulo con la mejor nota
-    /*Se entiende que el orden de los cursos coinciden con las notas*/
-    nombreModuloMejorNota(){
-        //this hace referencia al objeto alumno1, no el this.notas
-        //guarda la nota más alta
-        var mejorNota= this.mejorNota();
-
-        //pasamos la nota más alta y si existe en this.nota guardoo en indiceNotaAlta
-        //el indice donde se encuentra el modulo con la mejor nota
-        var indiceNotaAlta= this.notas.indexOf(mejorNota);
-
-        //accedemos con el indice de la mejor nota y devolvemos
-        return this.curso[indiceNotaAlta];
+    mejorNota() {
+        let maxNota = -Infinity;
+        this.notas.forEach(nota => {
+            if (nota > maxNota) {
+                maxNota = nota;
+            }
+        });
+        return maxNota;
     }
 
+    nombreModuloMejorNota() {
+        let maxNota = this.mejorNota();
+        for (let [asig, nota] of this.notas) {
+            if (nota === maxNota) {
+                return asig;
+            }
+        }
+    }
 }
+/*
+// Instanciar el objeto Alumno que hereda los atributos de Persona
+let alumno1 = new Alumno("jorge perez", "c5558", ["sistemas", "programacion", "fol"], [["sistemas", 3.5], ["programacion", 6.5], ["fol", 7.1]]);
 
-//intanciamos al objeto Alumno que hereda los atributos de persona
-//alumno1= new Alumno("jorge perez", "c5558", ["sistemas", "programacion", "fol"], 3.5,6.5,7.1);
+// Mostrar atributos del alumno
+alumno1.mostrarAtributosAlumno();
 
-//alumno1.mostrarAtributosAlumno();
+// Mostrar la nota media del alumno
+alert("La nota media es " + alumno1.notaMediaAlumno());
 
-//alert("La nota media es " + alumno1.notaMediaAlumno());
+// Mostrar la mejor nota del alumno
+alert("La mejor nota: " + alumno1.mejorNota())
 
-//alert("La mejor nota: " + alumno1.mejorNota())
-
-//alert(alumno1.nombreModuloMejorNota());
-
-
-
-
+// Mostrar el nombre del módulo con la mejor nota
+alert(alumno1.nombreModuloMejorNota());
+*/
