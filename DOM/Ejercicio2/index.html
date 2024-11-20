@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ejercicio 2</title>
+    <script src="ejercicio2.js"></script>
 </head>
-
 <body>
     <h2>Formulario de Registro</h2>
-    <form>
+    <!--evita que se envie el formulario-->
+    <form id="formulario" onsubmit="capturaDatosFormulario(event)">
 
         <!-- Nombre 
         nelson galicia
@@ -61,10 +61,11 @@
         <br><br>
  
 
-        <input type="submit" placeholder="hola">
-       
-       
+        <input type="submit">
+
+        <!--escribimos el contenido-->
+        <p id="contenidoFinalFormulario"></p>
+          
     </form>
 </body>
-
 </html>

@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="ejercicio3.js"></script>
 </head>
-
 <body>
     <h2>Formulario de Registro</h2>
-    <form>
+    <form action="/enviar-datos" method="post">
 
         <!-- Nombre 
         nelson galicia
@@ -48,23 +47,17 @@
         </select>
         <br><br>
 
+        <!--Nuevo campo-->
+        <label for="campo estatico">Nuevo campo:</label>
+        <input type="text" id="campo estatico"   required>
+        <br><br>
+
         <label for="telefono">Teléfono móvil:</label>
-        <input type="tel" id="telefono" name="telefono" pattern="[0-9]{9}" title="Número de teléfono válido" placeholder="+34 123 456 789" required>
+        <input type="tel" id="telefono" name="telefono" pattern="[0-9]{6}" title="Número de teléfono válido" placeholder="+34 123 456 789" required>
         <br><br>
- 
-        <label for="correo" pattern="[A-Za-z0-9!*$%@_-]">Correo Electrónico:</label>
-        <input type="email" id="correo" name="correo" required>
-        <br><br>
-
-        <label for="ubicacion" pattern="[A-Za-z0-9!*$%]">Ubicación:</label>
-        <input type="text" id="ubicacion" name="ubicacion" required>
-        <br><br>
- 
-
-        <input type="submit" placeholder="hola">
-       
+    
+        <input type="submit">
        
     </form>
 </body>
-
 </html>
