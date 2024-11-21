@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="ejercicio5.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Formulario de Envío de SMS</h2>
+
+        <!--  
+         oninput: este evento cuando el valor de un elemento en el formulario cambia mientras el usuario interactúa con él
+        -->
+        <form id="smsForm">
+            <label for="mensaje">Escribe tu mensaje:</label><br>
+            <textarea id="mensaje" name="mensaje" maxlength="145" 
+            placeholder="Escribe tu mensaje (máximo 145 caracteres)"
+            oninput="actualizarContador()"
+            >
+
+            </textarea><br><br>
+
+            <div id="contador">Caracteres restantes: 145</div>
+            <div class="error" id="errorMensaje"></div><br>
+
+            <input type="button" value="Enviar SMS">
+        </form>
+    </div>
+</body>
+</html>
