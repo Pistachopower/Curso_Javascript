@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="ejercicio4.js"></script>
+</head>
+
+<body>
+    <h2>Test de 2 Preguntas</h2>
+
+    <form name="formulario"> <!-- name="formulario": se usa para tomar todo el formulario -->
+        <!-- Pregunta 1 -->
+        <fieldset>
+            <!--usamos value para almacenar la seleccion-->
+            <legend>Pregunta 1: ¿Cuál es la capital de Francia?</legend>
+            <label>
+                <input type="radio" name="pregunta1" value="a" required> París
+            </label><br>
+            <label>
+                <input type="radio" name="pregunta1" value="b"> Madrid
+            </label><br>
+            <label>
+                <input type="radio" name="pregunta1" value="c"> Berlín
+            </label><br>
+            <label>
+                <input type="radio" name="pregunta1" value="d"> Roma
+            </label>
+        </fieldset>
+
+        <br>
+
+        <!-- Pregunta 2 -->
+        <fieldset>
+            <legend>Pregunta 2: ¿Cuántos continentes hay?</legend>
+            <label>
+                <input type="radio" name="pregunta2" value="a" required> 5
+            </label><br>
+            <label>
+                <input type="radio" name="pregunta2" value="b"> 6
+            </label><br>
+            <label>
+                <input type="radio" name="pregunta2" value="c"> 7
+            </label><br>
+            <label>
+                <input type="radio" name="pregunta2" value="d"> 8
+            </label>
+        </fieldset>
+
+        <input type="button" value="Ver Resultados" onclick="validarRespuesta()">
+    </form>
+
+    <!-- Sección para mostrar los resultados al final -->
+    <div id="resultadoFinal">
+        <h3>Resultados</h3>
+        <p id="resultadoPregunta1"></p>
+        <p id="resultadoPregunta2"></p>
+    </div>
+</body>
+
+</html>
