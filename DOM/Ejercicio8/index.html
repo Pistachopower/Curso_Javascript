@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="ejercicio8.js"></script>
+</head>
+
+<body>
+    <form id="formulario">
+        <p><b>Nombre</b></p>
+        <input id="nombre" type="text" placeholder="Nombre" required />
+
+        <p><b>Apellido</b></p>
+        <input id="apellidos" type="text" placeholder="Apellidos" />
+        <p><b>Nombre de usuario</b></p>
+        <input id="usuario" type="text" placeholder="@gmail.com" required />
+
+        <p><b>Contraseña</b></p>
+        <input id="passwd" type="password" minlength="8" required />
+
+        <p><b>Confirma tu contraseña</b></p>
+        <input id="passwdConfirm" type="password" minlength="8" required />
+
+        <p><b>Fecha de nacimiento</b></p>
+        <input type="date" id="dia" name="dia" required>
+
+        <p><b>Sexo</b></p>
+        <input id="sexo" type="text" pattern="[Mm]ujer|[Hh]ombre" />
+
+        <p><b>Teléfono móvil</b></p>
+        <input id="telefono" type="number" min="100000000" max="999999999" minlength="9" maxlength="9" />
+
+        <p><b>Tu dirección de correo electrónico actual</b></p>
+        <input id="email" type="email" required />
+
+        <p><input id="confirmar" type="button" value="Confirmar"/></p>
+
+        <p id="mensaje"></p>
+    </form>
+</body>
+
+</html>

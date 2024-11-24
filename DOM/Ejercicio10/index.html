@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario con Validación en Tiempo Real</title>
+    <script src="ejercicio10.js"></script>
+</head>
+<body>
+    <form id="formulario">
+        <p><b>Nombre</b></p>
+        <input id="nombre" type="text" placeholder="Nombre" required />
+
+        <p><b>Apellido</b></p>
+        <input id="apellidos" type="text" placeholder="Apellidos" />
+        
+        <p><b>Nombre de usuario</b></p>
+        <input id="usuario" type="text" placeholder="@gmail.com" required />
+
+        <p><b>Contraseña</b></p>
+        <input id="passwd" type="password" minlength ="8" placeholder="Contraseña" required />
+
+        <p><b>Confirmar Contraseña</b></p>
+        <input id="passwdConfirm" type="password" placeholder="Confirmar Contraseña" required />
+
+        <p><b>Teléfono</b></p>
+        <input id="telefono" type="text" placeholder="Teléfono (9 dígitos)" required />
+
+        <p><b>Email</b></p>
+        <input id="email" type="email" placeholder="Correo Electrónico" required />
+
+        <p id="mensaje" style="color: red;"></p>
+
+        <button type="button" id="confirmar">Enviar</button>
+        <button type="button" onclick="confirmarReset()">Resetear</button>
+    </form>
+</body>
+</html>

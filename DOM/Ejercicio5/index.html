@@ -11,19 +11,20 @@
         <h2>Formulario de Envío de SMS</h2>
 
         <!--  
-         oninput: este evento cuando el valor de un elemento en el formulario cambia mientras el usuario interactúa con él
+         oninput: Este es un evento que se activa cada vez que el usuario introduce o modifica el contenido en un elemento de formulario
         -->
         <form id="smsForm">
             <label for="mensaje">Escribe tu mensaje:</label><br>
-            <textarea id="mensaje" name="mensaje" maxlength="145" 
-            placeholder="Escribe tu mensaje (máximo 145 caracteres)"
-            oninput="actualizarContador()"
-            >
+
+            <!--definimos la longitud de la cadena con maxlength-->
+            <textarea id="mensaje" name="mensaje" maxlength="145" placeholder="Escribe tu mensaje (máximo 145 caracteres)"
+            
+            oninput="actualizarContador()">
 
             </textarea><br><br>
 
             <div id="contador">Caracteres restantes: 145</div>
-            <div class="error" id="errorMensaje"></div><br>
+            <div id="errorMensaje"></div><br>
 
             <input type="button" value="Enviar SMS">
         </form>
