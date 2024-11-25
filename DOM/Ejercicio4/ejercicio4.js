@@ -18,12 +18,6 @@ function inicializar() {
 
 function validarRespuesta() {
 
-    //Creamos un objeto con una clave y el valor
-    const respuestasCorrectas = {
-        pregunta1: 'a',   // Respuesta correcta para la Pregunta 1
-        pregunta2: 'c'   // Respuesta correcta para la Pregunta 2
-    };
-
     //variables que almacena las respuestas del usuario
     var seleccionUsuarioPreg1 = '';
     let seleccionUsuarioPreg2 = '';
@@ -54,7 +48,7 @@ function validarRespuesta() {
     document.getElementById("resultadoPregunta2").innerHTML = '';
 
     // Comprobamos la respuesta para la pregunta 1
-    if (seleccionUsuarioPreg1 === respuestasCorrectas.pregunta1) {
+    if (seleccionUsuarioPreg1 === 'a') {
         document.getElementById("resultadoPregunta1").innerHTML = "Es correcta la selección de la pregunta 1.";
 
     } else {
@@ -62,7 +56,7 @@ function validarRespuesta() {
     }
 
     // Comprobamos la respuesta para la pregunta 2
-    if (seleccionUsuarioPreg2 === respuestasCorrectas.pregunta2) {
+    if (seleccionUsuarioPreg2 === 'c') {
         document.getElementById("resultadoPregunta2").innerHTML = "Es correcta la selección de la pregunta 2.";
 
     } else {
