@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="ejercicio14.js"></script>
+</head>
+<body>
+    <h1>Formulario de Pedido</h1>
+    <form id="ordenFormulario">
+        <!-- Campo Nombre -->
+        <div class="form-group">
+            <label for="name">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+        </div>
+
+        <!-- Número de Habitación -->
+        <div class="form-group">
+            <label for="roomNumber">Número de Habitación:</label>
+            <input type="number" id="numHabitacion" name="numHabitacion" required>
+        </div>
+
+        <!-- Opciones de Radio -->
+        <div class="bebidas">
+            <label>Bebida:</label>
+            <br>
+            <input type="radio" id="expresso" name="bebidas" value="Expresso" required>
+            <label for="expresso">Expresso</label><br>
+            <input type="radio" id="cappuccino" name="bebidas" value="Cappuccino">
+            <label for="cappuccino">Cappuccino</label><br>
+            <input type="radio" id="moka" name="bebidas" value="Moka">
+            <label for="moka">Moka</label><br>
+            <input type="radio" id="other" name="bebidas" value="Otro">
+            <label for="other">Otro</label>
+        </div>
+
+        <!-- Botón Enviar -->
+        <input type="submit" value="Ver Resultados">         
+    </form>
+
+        <br>
+    <!-- Área de Información -->
+    <div class="info" id="infoBox">
+        Aquí se mostrará la información del pedido.
+    </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Contraseña</title>
+    <script>
+        function validarCampo(campo) {
+            if (campo.value.trim() === "") {
+                alert("Por favor, introduce una contraseña.");
+                campo.focus();
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Formulario de Contraseña</h2>
+    <form>
+        <label for="password1">Contraseña 1:</label>
+        <input type="passwo-rd" id="password1" onblur="validarCampo(this)">
+        <br><br>
+        <label for="password2">Contraseña 2:</label>
+        <input type="password" id="password2" onblur="validarCampo(this)">
+        <br><br>
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>
