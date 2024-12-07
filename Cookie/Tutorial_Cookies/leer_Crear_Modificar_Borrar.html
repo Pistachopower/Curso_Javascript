@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+    //crear una cookie nombre; fecha de expiracion utf; edad maxima en segundo; ruta; dominio
+
+    //document.cookie= "usuario= ada lovelace; expires= thur, 1 nov 2024 12:00:00 utf; path= /;";
+
+    //esta cookie existirá mientras el navegador esté abierto
+    document.cookie= "usuario= ada lovelace;";
+    document.cookie= "sexo= mujer;";
+
+    //leer una cookie
+    var miCookie= document.cookie;
+    alert(miCookie);
+
+
+    //Modificar una cookie
+    document.cookie= "sexo= hombre;";
+    alert(document.cookie);
+
+    //borrar una cookie
+    //document.cookie= "usuario=; expires= Thu, 01 Jan 1970 00:00:01 GMT;";
+    //document.cookie= "sexo=; expires= Thu, 01 Jan 1970 00:00:01 GMT;";
+    alert(document.cookie);
+</script>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" id="verTodas">Ver todas las cookies</button>
+    <button type="button" id="crearCookie">Crear cookie</button>
+    <button type="button" id="modificarCookie">Modificar cookie</button>
+    <button type="button" id="leerCookie">leerCookie</button>
+    <button type="button" id="borrarCookie">Borrar cookie 2</button>
+
+    <script>
+        //asociamos 
+        document.getElementById("verTodas").addEventListener("click", verCookies);
+        document.getElementById("crearCookie").addEventListener("click", crearModificarCookie);
+        document.getElementById("modificarCookie").addEventListener("click", crearModificarCookie);
+        document.getElementById("leerCookie").addEventListener("click", leerCookie);
+        document.getElementById("borrarCookie").addEventListener("click", borrarCookie);
+    
+        function verCookies() {
+            alert("Cookies actuales:\n" + document.cookie);
+        }
+
+        function crearModificarCookie() {
+            var clave= prompt("clave: ");
+            var valor= prompt("valor:");
+            var expiracion= parseInt(prompt("Numero de dias para que expire: "));
+
+            //llamamos a la funcion creada
+            setCookie(clave, valor, expiracion);
+            verCookies(getCookie(clave));
+        }
+
+        function leerCookie() {
+            var clave= prompt("Introduzca nombre cookie a consultar:");
+            
+        }
+
+        function borrarCookie() {
+            var clave= prompt("Introduzca clave cookie a borrar:");
+
+            deleteCookie(clave);
+            verCookies();
+        }
+
+        //borrar cookie
+        function deleteCookie(clave) {
+            setCookie(clave, "", 0);
+        }
+
+
+        //crear y modificar cookie
+        function setCookie(clave, valor, expiracion) {
+            //a partir de esta fecha actual
+            var d= new Date();
+
+            //setTime: modificar la fecha a la hora que queramos 
+            //getTime: obtiene la hora y la fecha actual
+            //expiracion: dias de expiracion (está en milisegundos)
+            //24 horas, 60 minutos, 60 segundos, 1000 milisegundos
+            //d se modifica a la fecha actual + expiracion
+            d.setTime(d.getTime() + expiracion *24*60*60*1000);
+
+            //definimos la clave y el valor de la cookie: expire:fechaExpiracion
+            var expiracion= "expires="+ d.toUTCString();
+
+            //escribimos la cookie
+            document.cookie= clave + "=" + valor + ";" + expiracion+ ";path=/";
+
+        }
+
+
+        //obtener los datos de una cookie
+        function getCookie(clave) {
+            var cla= clave + "=";
+
+            //selecciona cadena, divide en trozo y lo guarda en un array nombre: valor
+            var array= document.cookie.split(';');
+
+            for (var i=0; i < array.length; i++) { 
+                //obtenemos el valor del indice actual del array de i
+                var c= array[i];
+
+                while (c.charAt(0) == ' ') {
+                    c= c.substring(1);
+                }
+
+                //si el valor substring de c devuelve 0
+                if (c.indexOf(clave) == 0) {
+                    //devolvemos desde donde queremos obtener la cadena
+                    return c.substring(cla.length,c.length);
+                }
+            }
+            return "";
+
+        }
+    </script>
+</body>
+</html>
