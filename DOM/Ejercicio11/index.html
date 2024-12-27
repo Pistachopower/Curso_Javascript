@@ -4,25 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de Contraseña</title>
-    <script>
-        function validarCampo(campo) {
-            if (campo.value.trim() === "") {
-                alert("Por favor, introduce una contraseña.");
-                campo.focus();
-            }
-        }
-    </script>
+    <script src="ejercicio11.js"></script>
 </head>
 <body>
+
     <h2>Formulario de Contraseña</h2>
     <form>
-        <label for="password1">Contraseña 1:</label>
-        <input type="passwo-rd" id="password1" onblur="validarCampo(this)">
+        <label for="contrasena1">Contraseña 1:</label>
+        <input type="password" id="contrasena1">
+        <br>
+        <span id="error1" style="color: red; display: none;">Este campo no puede estar vacío.</span> <!-- Mensaje de error -->
+        
         <br><br>
-        <label for="password2">Contraseña 2:</label>
-        <input type="password" id="password2" onblur="validarCampo(this)">
+
+        <label for="contrasena2">Contraseña 2:</label>
+        <input type="password" id="contrasena2">
+        <br>
+        <span id="error2" style="color: red; display: none;">Este campo no puede estar vacío.</span> <!-- Mensaje de error -->
+        
         <br><br>
+        
         <input type="submit" value="Enviar">
     </form>
+
 </body>
 </html>
