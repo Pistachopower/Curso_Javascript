@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     //esto es un array
     {
       //clave: valor
-      src: "/img/img1.jpg",
+      src: "img/img1.jpg",
       desc: "descripcion1",
       specs: ["spec11", "spec12"]
     },
@@ -25,7 +25,8 @@ function pintarContenido(viajes) {
 
 
   //tomamos la etiqueta completa y todos sus hijos 
-  var ul = document.querySelector("#todos-los-viajes ul");
+  //querySelector("#todos-los-viajes"): selecciona el primer selector o etiqueta con sus hijos
+  var ul = document.querySelector("#todos-los-viajes");
 
   //recorremos el array de objeto 
   viajes.forEach(viaje => {
@@ -34,28 +35,41 @@ function pintarContenido(viajes) {
   var li= document.createElement("li");
 
   
-      //creamos un elemento img
-      const img = document.createElement("img");
-      img.src = viaje.src;
-  
-      const p = document.createElement("p");
+  //creamos un elemento img vacio
+  var img = document.createElement("img");
 
-      p.textContent = viaje.desc;
+  //viaje.src: accedemos al objeto array viaje y seleccionamos la clave src que tiene su valor
+  //img.src: tomamos la etiqueta img y accedemos al atributo propio de img src para escribir 
+  //el contenido de viaje.src
+  img.src = viaje.src;
   
-      const specsList = document.createElement("ul");
-      specsList.classList.add("specs");
+  //seguimos los mismos pasos
+  var p = document.createElement("p");
+
+  //escribimos en p el contenido de viaje.desc
+  p.textContent = viaje.desc;
   
-      viaje.specs.forEach(spec => {
-        const specItem = document.createElement("li");
-        specItem.textContent = spec;
-        specsList.appendChild(specItem);
-      });
+  //creamos otra etiqueta vacia 
+  var specsList = document.createElement("ul");
   
-      //pinta el elemento y su contenido en el html (por cada elemento del objeto viaje)
-      li.appendChild(img);
-      li.appendChild(p);
-      li.appendChild(specsList);
-      ul.appendChild(li);
+
+  //iteramos sobre el objeto array de specs
+  viaje.specs.forEach(spec => {
+    //creamos una etiqueta li vacia
+  var specItem = document.createElement("li");
+
+  //escribimos el contenido de spec en la etiqueta li
+  specItem.textContent = spec;
+
+  
+  specsList.appendChild(specItem);
+  });
+  
+  //pinta el elemento y su contenido en el html (por cada elemento del objeto viaje)
+  li.appendChild(img);
+  li.appendChild(p);
+  li.appendChild(specsList);
+  ul.appendChild(li);
 
   });
 
