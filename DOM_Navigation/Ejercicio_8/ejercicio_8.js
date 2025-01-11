@@ -1,8 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   var viajes = [
-    //esto es un array
     {
-      //clave: valor
       src: "img/img1.jpg",
       desc: "descripcion1",
       specs: ["spec11", "spec12"]
@@ -14,63 +12,58 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   ];
 
-  //llamamos a la funcion 
+  // Llamamos a la función para pintar los contenidos
   pintarContenido(viajes);
-
 });
 
-
-
 function pintarContenido(viajes) {
+  // Seleccionamos el div que contiene el ul
+  var div = document.querySelector("#todos-los-viajes");
+  
+  // Crear el h1 con el subtítulo
+  var h1 = document.createElement("h1");
+  h1.textContent = "subtitulo";
+  
+  
+  var prueba= div.querySelector("ul");
+  
+  // Agregar el h1 al div antes del ul
+  div.insertBefore(h1, prueba);
+  
+  // Seleccionamos el ul dentro del div para agregar los viajes
+  var ul = div.querySelector("ul");
 
-
-  //tomamos la etiqueta completa y todos sus hijos 
-  //querySelector("#todos-los-viajes"): selecciona el primer selector o etiqueta con sus hijos
-  var ul = document.querySelector("#todos-los-viajes");
-
-  //recorremos el array de objeto 
+  // Recorremos el array de objetos viaje
   viajes.forEach(viaje => {
+      // Creamos un li para cada viaje
+      var li = document.createElement("li");
 
-  //pintamos la estructura de la etiqueta
-  var li= document.createElement("li");
+      // Creamos la imagen y la agregamos al li
+      var img = document.createElement("img");
+      img.src = viaje.src;
+      li.appendChild(img);
 
-  
-  //creamos un elemento img vacio
-  var img = document.createElement("img");
+      // Creamos el párrafo con la descripción y lo agregamos al li
+      var p = document.createElement("p");
+      p.textContent = viaje.desc;
+      li.appendChild(p);
 
-  //viaje.src: accedemos al objeto array viaje y seleccionamos la clave src que tiene su valor
-  //img.src: tomamos la etiqueta img y accedemos al atributo propio de img src para escribir 
-  //el contenido de viaje.src
-  img.src = viaje.src;
-  
-  //seguimos los mismos pasos
-  var p = document.createElement("p");
+      // Creamos el ul para las especificaciones
+      var specsList = document.createElement("ul");
 
-  //escribimos en p el contenido de viaje.desc
-  p.textContent = viaje.desc;
-  
-  //creamos otra etiqueta vacia 
-  var specsList = document.createElement("ul");
-  
+      specsList.className= "specs";
 
-  //iteramos sobre el objeto array de specs
-  viaje.specs.forEach(spec => {
-    //creamos una etiqueta li vacia
-  var specItem = document.createElement("li");
+      // Agregamos cada especificación como un li dentro del ul
+      viaje.specs.forEach(spec => {
+          var specItem = document.createElement("li");
+          specItem.textContent = spec;
+          specsList.appendChild(specItem);
+      });
 
-  //escribimos el contenido de spec en la etiqueta li
-  specItem.textContent = spec;
+      // Agregamos el ul de especificaciones al li del viaje
+      li.appendChild(specsList);
 
-  
-  specsList.appendChild(specItem);
+      // Finalmente, agregamos el li al ul principal
+      ul.appendChild(li);
   });
-  
-  //pinta el elemento y su contenido en el html (por cada elemento del objeto viaje)
-  li.appendChild(img);
-  li.appendChild(p);
-  li.appendChild(specsList);
-  ul.appendChild(li);
-
-  });
-
 }
