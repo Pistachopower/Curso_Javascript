@@ -65,12 +65,12 @@ function pintarElementos(viajes) {
         var ulSub = document.createElement("ul");
 
         //agregamos el atributo a ul con className
-        ulSub.className= "specs";
+        ulSub.className = "specs";
 
         //agregamos ulSub como hijo de liPadre
         li.appendChild(ulSub);
 
-            //como tenemos otro objeto debemos recorrerlo
+        //como tenemos otro objeto debemos recorrerlo
         viaje.specs.forEach(function (spec) {
 
             var liSub = document.createElement("li");
@@ -82,8 +82,27 @@ function pintarElementos(viajes) {
 
         });
 
+        p.style.display === "none";
+        ulSub.style.display = "none";
+
+        //usamos un evento que cuando el usuario de click se dispare
+        img.addEventListener("click", function(){
+
+            //seleccionamos p y ul y las propiedades style.display
+            //para mostrar en bloques 
+            if (p.style.display === "none" && ulSub.style.display === "none") {
+                p.style.display = "block";
+                ulSub.style.display = "block";
+                
+            } else {
+                p.style.display = "none";
+                ulSub.style.display = "none";
+            }
+        }
+
+        )
+
     });
 
 }
-
 
